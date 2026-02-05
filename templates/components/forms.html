@@ -1,0 +1,60 @@
+<form action="/action_page.php">
+  {% csrf_token %}
+
+  <div class="mb-3">
+    <label for="pwd" class="form-label">Search</label>
+    <input
+      type="text"
+      class="form-control text-danger"
+      id="pwd"
+      placeholder="Search your preffered Estates"
+      name="pswd"
+    />
+  </div>
+  <section class="row">
+    <div class="col-6 mb-3">
+      <label for="">Type</label>
+      <select class="form-select">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+
+    <div class="col-6">
+      <label for="">Bedrooms</label>
+      <select class="form-select">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+
+    <div class="col-6 mb-3">
+      <label for="">Max Price</label>
+      <select class="form-select">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+
+    <div class="col-6">
+      <label for="">Min Price</label>
+      <select class="form-select">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+  </section>
+
+  <div class="d-grid">
+    <p class="text-center cursor-pointer" role="button">show more options</p>
+    <button type="submit" class="btn btn-danger btn-block p-3">Search</button>
+  </div>
+</form>
