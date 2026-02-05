@@ -79,18 +79,9 @@ WSGI_APPLICATION = 'emzy_estate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'emzy_estate',
-        'USER': 'postgres',
-        'PASSWORD': '1011',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.parse(config("DATABASE_URL"))
 }
 
-database_url = os.environ.get("DATABASE_URL")
-DATABASES["default"] = dj_database_url.parse(config("DATABASE_URL"))
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -128,7 +119,9 @@ USE_TZ = True
 
 # configured
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 # inbuilt
 # STATIC_URL = 'static/'
