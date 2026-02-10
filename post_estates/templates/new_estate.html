@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+<!---->
+{% block title %} Create Post {% endblock title %} {% block content %}
+<form
+  action="{% url 'post_estates:new_estate' %}"
+  style="max-width: 500px; margin: auto"
+  method="post"
+  enctype="multipart/form-data shadow-sm mx-auto"
+  class="needs-validation"
+  novalidate
+>
+  {% csrf_token %}
+  <!---->
+  <div class="container border border-danger p-3" style="max-width: 500px">
+    {{form.as_p}}
+  </div>
+
+  <button class="btn btn-danger my-3">Add a new lodge</button>
+</form>
+{% endblock content %}

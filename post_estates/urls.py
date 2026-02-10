@@ -5,6 +5,9 @@ app_name = "post_estates" #tells the project the particular app this name urls b
 
 # urls patterns for post app
 urlpatterns = [
-    # path("", views.posts_lists, name="lists"),
-    # path("new_post", views.new_post, name="post"),
+    path("", views.fetch_post_view, name="home"),
+    path("new_estate", views.create_post_view, name="new_estate"),
+     path("<int:id>", views.estate_detail, name="details"),
+     path("estate/<int:pk>/tab/<str:tab>/", views.estate_tab),
+
 ]

@@ -1,46 +1,59 @@
-<div class="card my-4 h-25 p-3" style="width: 100%">
-  <p class="text-capitalize">spacious 2 bedroom flat apartment</p>
-  <article class="" style="height: 300px">
-    <img
-      class="card-img-top rounded h-100 w-75 mx-auto d-block"
-      src="https://images.pexels.com/photos/8469932/pexels-photo-8469932.jpeg"
-      alt="Card image"
-    />
-  </article>
-  <div class="card-body">
-    <h4 class="card-title text-danger">block of flats for sale</h4>
-    <p class="card-text">
-      2-bedroom apartment - ologolo, lekki - ₦150m for sale: spacious 2-bedroom
-      apartment located in a secure and serene neighborhood in ologolo, lekki.
-      location: ologolo, lekki, lagos ....
-    </p>
-    <hr />
-    <p class="text-danger h3">N150,000,00</p>
-  </div>
+<div class="card my-3 shadow border-0 rounded-4 overflow-hidden px-3">
+  <a
+    href='{% url "post_estates:details" id=estate.id %}'
+    class="text-capitalize my-2 text-decoration-none text-dark fs-4"
+    >spacious 2 bedroom flat apartment</a
+  >
+
+  <section class="row">
+    <article class="col-md-4 col-lg-6">
+      <a href="{% url 'post_estates:details' id=estate.id %}" style="">
+        {% if estate.images %}
+        <img
+          class="card-img-top img-fluid rounded-md"
+          style="height: 200px"
+          src="{{ estate.images.url }}"
+          alt="{{ estate.title }}"
+        />
+        {% else %}
+        <img
+          class="img-fluid"
+          src="https://images.pexels.com/photos/8469932/pexels-photo-8469932.jpeg"
+          alt="Card image"
+        />
+        {% endif %}
+      </a>
+    </article>
+    <div class="card-bodyl col-md-8 col-lg-6">
+      <h4 class="card-title text-danger text-capitalize fs-6 fw-bolder">
+        block of flats for sale
+      </h4>
+      <p class="card-text fs-6 text-muted">
+        2-bedroom apartment - ologolo, lekki - ₦150m for sale: spacious
+        2-bedroom apartment located in a secure and serene neighborhood in
+        ologolo, lekki. location: ologolo, lekki, lagos ....
+      </p>
+      <hr />
+      <p class="text-danger h3 fs-4 fw-bold">₦{{estate.price}}</p>
+    </div>
+  </section>
   <div class="card-footer row">
-    <article
-      class="col-3 d-flex flex-column justify-content-center align-items-center"
-    >
+    <article class="col-3">
       <i class="bi bi-envelope"></i>
-      <small>2 bedrooms</small>
+      <p class="" style="font-size: 12px">{{estate.bedroom}} bedrooms</p>
     </article>
-    <article
-      class="col-3 d-flex flex-column justify-content-center align-items-center"
-    >
-      <i class="bi bi-person"></i>
-      <small>2 bedrooms</small>
+
+    <article class="col-3">
+      <i class="bi bi-person d-block"></i>
+      <p class="fs-" style="font-size: 12px">{{estate.bathroom}} bathrooms</p>
     </article>
-    <article
-      class="col-3 d-flex flex-column justify-content-center align-items-center"
-    >
+    <article class="col-3">
       <i class="bi bi-lock"></i>
-      <small>2 bedrooms</small>
+      <p style="font-size: 12px">{{estate.toilet}} Toilets</p>
     </article>
-    <article
-      class="col-3 d-flex flex-column justify-content-center align-items-center"
-    >
+    <article class="col-3">
       <i class="bi bi-lock"></i>
-      <small>2 bedrooms</small>
+      <p style="font-size: 12px">2 bedrooms</p>
     </article>
   </div>
 </div>

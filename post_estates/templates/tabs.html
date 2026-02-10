@@ -1,0 +1,35 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <script src="{% static 'js/index.js' %}" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="tabs d-flex">
+      <button
+        onclick="openTab(event, 'details')"
+        class="btn-tab flex-fill py-3"
+      >
+        <i class="bi bi-file-earmark-text"></i> Details
+      </button>
+      <button onclick="openTab(event, 'map')" class="btn-tab flex-fill py-3">
+        <i class="bi bi-map"></i> Map
+      </button>
+      <button
+        onclick="openTab(event, 'areaguide')"
+        class="btn-tab flex-fill py-3"
+      >
+        <i class="bi bi-geo-alt"></i> Area Guide
+      </button>
+    </div>
+
+    <div id="details" class="tab">Details content</div>
+    <div id="map" class="tab" style="display: none">Map content</div>
+    <div id="areaguide" class="tab" style="display: none">
+      Areaguide content
+    </div>
+  </body>
+</html>

@@ -1,61 +1,71 @@
-<form action="/action_page.php">
+<form
+  action="/action_page.php"
+  class="p-5 text-white"
+  style="
+    background-image: url(/static/images/estate_hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  "
+>
   {% csrf_token %}
-
-  <div class="mb-3">
-    <label for="pwd" class="form-label">Search</label>
-    <input
-      type="text"
-      class="form-control text-danger"
-      id="pwd"
-      placeholder="Search your preffered Estates"
-      name="pswd"
-    />
-  </div>
-  <section class="row">
-    <div class="col-6 mb-3">
-      <label for="">Type</label>
-      <select class="form-select">
-        <option>All Types</option>
-        <option>Flat/Apertment</option>
-        <option>House</option>
-        <option>Land</option>
-        <option>Commercial Properties</option>
-      </select>
+  <section class="" style="max-width: 700px; margin: 0 auto">
+    <div class="mb-3">
+      <label for="pwd" class="form-label">Search</label>
+      <input
+        type="text"
+        class="form-control text-danger"
+        id="pwd"
+        placeholder="Search your preffered Estates"
+        name="pswd"
+      />
     </div>
+    <section class="row">
+      <div class="col-6 mb-3">
+        <label for="">Type</label>
+        <select class="form-select">
+          <option>All Types</option>
+          <option>Flat/Apertment</option>
+          <option>House</option>
+          <option>Land</option>
+          <option>Commercial Properties</option>
+        </select>
+      </div>
 
-    <div class="col-6">
-      <label for="">Bedrooms</label>
-      <select class="form-select">
-        <option>Any</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-      </select>
-    </div>
+      <div class="col-6">
+        <label for="">Bedrooms</label>
+        <select class="form-select">
+          <option>Any</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+      </div>
 
-    <div class="col-6 mb-3">
-      <label for="">Max Price</label>
-      <select class="form-select">
-        <option>N250,000</option>
-        <option>N500,000</option>
-        <option>N1 Million</option>
-        <option>2 Million</option>
-      </select>
-    </div>
+      <div class="col-6 mb-3">
+        <label for="">Max Price</label>
+        <select class="form-select">
+          <option>N250,000</option>
+          <option>N500,000</option>
+          <option>N1 Million</option>
+          <option>2 Million</option>
+        </select>
+      </div>
 
-    <div class="col-6">
-      <label for="">Min Price</label>
-      <select class="form-select">
-        <option>N250,000</option>
-        <option>N500,000</option>
-        <option>N1 Million</option>
-        <option>2 Million</option>
-      </select>
+      <div class="col-6">
+        <label for="">Min Price</label>
+        <select class="form-select">
+          <option>N250,000</option>
+          <option>N500,000</option>
+          <option>N1 Million</option>
+          <option>2 Million</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="d-grid">
+      <p class="text-center cursor-pointer" role="button">show more options</p>
+      <button type="submit" class="btn btn-danger btn-block p-3">Search</button>
     </div>
   </section>
-
-  <div class="d-grid">
-    <p class="text-center cursor-pointer" role="button">show more options</p>
-    <button type="submit" class="btn btn-danger btn-block p-3">Search</button>
-  </div>
 </form>

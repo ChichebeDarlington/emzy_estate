@@ -19,6 +19,9 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+#bigauthfiled added by me
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -42,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'post_estates.apps.PostEstatesConfig',
+    'user_estates.apps.UserEstatesConfig',
     'bootstrap5',
 ]
 
@@ -79,8 +83,20 @@ WSGI_APPLICATION = 'emzy_estate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 DATABASES = {
-    'default': dj_database_url.parse(config("DATABASE_URL"))
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("DB_NAME"),
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASSWORD"),
+        "HOST": config("DB_HOST"),
+        "PORT": config("DB_PORT", cast=int),
+    }
 }
+
+#deployment
+# DATABASES = {
+#     'default': dj_database_url.parse(config("DATABASE_URL"))
+# }
 
 
 # Password validation
@@ -118,9 +134,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 # configured
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-# STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_URL = "static/"
+MEDIA_URL = 'media/'
+
+STATIC_ROOT = BASE_DIR / 'assets'
+MEDIA_ROOT = BASE_DIR / 'media'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
 
 # inbuilt

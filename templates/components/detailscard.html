@@ -1,0 +1,56 @@
+<div class="card my-4 h-25 p-3" style="width: 100%">
+  <p class="text-capitalize">spacious 2 bedroom flat apartment</p>
+  <article class="" style="height: 300px">
+    {% if estate.images %}
+    <img
+      class="card-img-top rounded h-100 mx-auto d-block"
+      src="{{ estate.images.url }}"
+      alt="{{ estate.title }}"
+    />
+    {% else %}
+    <img
+      class="card-img-top rounded h-100 mx-auto d-block"
+      src="https://images.pexels.com/photos/8469932/pexels-photo-8469932.jpeg"
+      alt="Card image"
+    />
+    {% endif %}
+  </article>
+  <div class="card-bodyl">
+    <h4 class="card-title text-danger">block of flats for sale</h4>
+    <p class="card-text">
+      2-bedroom apartment - ologolo, lekki - ₦150m for sale: spacious 2-bedroom
+      apartment located in a secure and serene neighborhood in ologolo, lekki.
+      location: ologolo, lekki, lagos ....
+    </p>
+    <hr />
+    <p class="text-danger h3">{{estate.price}}</p>
+  </div>
+  <div class="card-footer row">
+    <article
+      class="col-3 d-flex flex-column justify-content-center align-items-center"
+    >
+      <i class="bi bi-envelope"></i>
+      <small>{{estate.bedroom}} bedrooms</small>
+    </article>
+    <article
+      class="col-3 d-flex flex-column justify-content-center align-items-center"
+    >
+      <i class="bi bi-person"></i>
+      <small class="" style="font-size: 12px"
+        >{{estate.bathroom}} bathrooms</small
+      >
+    </article>
+    <article
+      class="col-3 d-flex flex-column justify-content-center align-items-center"
+    >
+      <i class="bi bi-lock"></i>
+      <small style="font-size: 12px">{{estate.toilet}} Toilets</small>
+    </article>
+    <article
+      class="col-3 d-flex flex-column justify-content-center align-items-center"
+    >
+      <i class="bi bi-lock"></i>
+      <small style="font-size: 12px">2 bedrooms</small>
+    </article>
+  </div>
+</div>

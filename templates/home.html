@@ -7,4 +7,19 @@
 <!--form-->
 {% include "components/forms.html" %}
 <!--card-->
-{% include "components/card.html" %} {% endblock content %}
+<!---->
+<div class="container">
+  <section class="row justify-content-center">
+    {% for estate in estates %}
+    <article class="col-12 col-lg-6">
+      {% include "components/card.html" with estate=estate %}
+    </article>
+    {% empty %}
+    <p>No estates available at the moment.</p>
+    {% endfor %}
+  </section>
+</div>
+<!---->
+
+<!---->
+{% endblock content %}

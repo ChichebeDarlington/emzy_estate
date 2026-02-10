@@ -2,7 +2,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger text-white py-4">
   <div class="container">
     <!-- Brand -->
-    <a class="navbar-brand fw-bold text-white" href="/">Emzy Estates</a>
+    <a
+      class="navbar-brand fw-bold text-white"
+      href="{% url 'post_estates:home' %}"
+      ><img
+        src="/static/images/emzy_logo_1.jpeg"
+        alt=""
+        class="rounded"
+        style="width: 40px; height: 30px"
+      />
+      Emzy Estates</a
+    >
 
     <!-- Mobile toggle -->
     <button
@@ -18,33 +28,61 @@
     </button>
 
     <!-- Nav links -->
-    <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a href="/" class="nav-link active">For Sales</a>
+          <a href="{% url 'post_estates:home' %}" class="nav-link active"
+            >For Sales</a
+          >
         </li>
 
         <li class="nav-item">
-          <a href="/about" class="nav-link">For Rent</a>
+          <a href="/" class="nav-link">For Rent</a>
         </li>
 
         <li class="nav-item">
-          <a href="" class="nav-link">Companies</a>
+          <a href="{% url 'post_estates:home' %}" class="nav-link">Companies</a>
         </li>
 
         <li class="nav-item">
-          <a href="" class="nav-link" title="New Post">Requests</a>
+          <a
+            href="{% url 'post_estates:home' %}"
+            class="nav-link"
+            title="New Post"
+            >Requests</a
+          >
         </li>
         <li class="nav-item">
-          <a href="" class="nav-link" title="New Post">Requests</a>
+          <a href="/" class="nav-link" title="New Post">Market Trends</a>
         </li>
+        {% if not user.is_authenticated %}
         <li class="nav-item">
-          <a href="" class="nav-link"> Register </a>
+          <a href="{% url 'user_estates:register' %}" class="nav-link">
+            Register
+          </a>
         </li>
 
         <li class="nav-item">
-          <a href="" class="nav-link"> Login </a>
+          <a href="{% url 'user_estates:login' %}" class="nav-link"> Login </a>
         </li>
+        {% endif %} {% if user.is_authenticated %}
+        <li class="nav-item">
+          <form
+            action="{% url 'user_estates:logout' %}"
+            method="post"
+            class="d-inline"
+          >
+            {% csrf_token %}
+            <button class="btn btn-outline-light btn-sm">Logout</button>
+          </form>
+        </li>
+        {% endif %} {% if user.is_staff %}
+        <li class="nav-item">
+          <a href="{% url 'post_estates:new_estate' %}" class="nav-link">
+            Add a post
+          </a>
+        </li>
+        {% endif %}
       </ul>
     </div>
   </div>

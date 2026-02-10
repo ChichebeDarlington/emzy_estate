@@ -15,7 +15,7 @@
     <!---->
     {% bootstrap_javascript %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    <script src="{% static 'js/main.js' %}" defer></script>
+    <script src="{% static 'js/index.js' %}" defer></script>
 
     <title>{% block title %}Emzy Lodges{% endblock %}</title>
   </head>
@@ -24,7 +24,7 @@
     {% include "components/navbar.html" %}
 
     <!-- MAIN CONTENT -->
-    <main class="container my-4">
+    <main class="container-fluid my-4">
       {% block content %}
       <p>Once Again Tuesday Is Near</p>
       {% endblock %}
