@@ -20,7 +20,6 @@ ENVIRONMENT = config("ENVIRONMENT", default="development")
 
 DEBUG = ENVIRONMENT == "development"
 
-SECRET_KEY = config("SECRET_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -157,6 +156,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # inbuilt
 # STATIC_URL = 'static/'
