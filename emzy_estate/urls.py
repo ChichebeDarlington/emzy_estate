@@ -25,7 +25,7 @@ urlpatterns = [
     re_path(r'^static/(?P<path>.*)$',serve,{'document_root': settings.STATIC_ROOT}),
     re_path(r'^media/(?P<path>.*)$',serve,{'document_root': settings.MEDIA_ROOT}),
     path('admin/', admin.site.urls),
-    path('',views.homepage),
-    path("post_estates/", include('post_estates.urls')),
+    # path('',views.homepage),
+    path("", include('post_estates.urls')),
     path("user_estates/", include('user_estates.urls')),
 ]
