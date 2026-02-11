@@ -1,0 +1,56 @@
+.tab {
+  display: none;
+  border: 2px solid #ccc;
+  padding: 15px;
+}
+
+/* When this class is added, the tab shows up with a red border */
+.tab.is-active {
+  display: block;
+  border-color: red;
+}
+
+/* Default button style */
+.btn-tab {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Active button style */
+.btn-tab.active {
+  /* background-color: red; */
+  /* color: white; */
+  border-bottom-color: red;
+  border-bottom: 3px solid red;
+}
+
+/* Hide tabs by default */
+.tab {
+  display: none;
+  /* border: 2px solid red; */
+  padding: 20px;
+  margin-top: -1px; /* Merges button border with content border */
+}
+
+/* card design */
+.property-img {
+  height: 180px;
+  object-fit: cover;
+}
+.card {
+  transition: 0.2s ease-in-out;
+}
+.card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* hero container */
+.custom-container {
+  max-width: 100px;
+  margin: 0 auto; /* center */
+  color: red;
+}
