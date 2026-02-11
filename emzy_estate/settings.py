@@ -42,7 +42,7 @@ DEBUG = config("DEBUG", cast=bool)
 ALLOWED_HOSTS = (
     ["127.0.0.1", "localhost"]
     if ENVIRONMENT == "development"
-    else ["your-app-name.onrender.com"]
+    else ["https://emzy-estate.onrender.com", "emzy-estate.onrender.com"]
 )
 
 
