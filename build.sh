@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
-# Exit on error
 set -o errexit
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Convert static asset files
+# Collect static files
 python manage.py collectstatic --no-input
 
-# Apply database migrations
+# Run migrations <--- THIS IS THE KEY
 python manage.py migrate
