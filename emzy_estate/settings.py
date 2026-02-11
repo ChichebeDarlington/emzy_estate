@@ -99,7 +99,8 @@ if ENVIRONMENT == "production":
     DATABASES = {
         'default': dj_database_url.parse(config("DATABASE_URL"))
     }
-else
+else:
+    #DEVELOPMENT
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
@@ -110,6 +111,8 @@ else
             "PORT": config("DB_PORT", cast=int),
         }
     }
+
+
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
