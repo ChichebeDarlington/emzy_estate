@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class EstatePost(models.Model):
     title = models.CharField(max_length=78)
-    images = models.ImageField(upload_to="pics/", default="fallback.jpg", blank=True)
+    images = models.ImageField(upload_to="images/", default="images/fallback.jpg", blank=True)
 
     details = models.CharField(max_length=255)
     location = models.CharField(max_length=78)
