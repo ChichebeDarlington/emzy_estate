@@ -93,23 +93,21 @@ WSGI_APPLICATION = 'emzy_estate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# if ENVIRONMENT == "production":
-    #PRODUCTION
-DATABASES = {
+if ENVIRONMENT == "production":
+        DATABASES = {
         'default': dj_database_url.parse(config("DATABASE_URL"))
     }
-# else:
-    #DEVELOPMENT
-    # DATABASES = {
-    #     "default": {
-    #         "ENGINE": "django.db.backends.postgresql",
-    #         "NAME": config("DB_NAME"),
-    #         "USER": config("DB_USER"),
-    #         "PASSWORD": config("DB_PASSWORD"),
-    #         "HOST": config("DB_HOST"),
-    #         "PORT": config("DB_PORT", cast=int),
-    #     }
-    # }
+else:
+          DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": config("DB_NAME"),
+            "USER": config("DB_USER"),
+            "PASSWORD": config("DB_PASSWORD"),
+            "HOST": config("DB_HOST"),
+            "PORT": config("DB_PORT", cast=int),
+        }
+    }
 
 
 # Password validation
@@ -149,6 +147,7 @@ USE_TZ = True
 # configured
 STATIC_URL = "static/"
 MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_ROOT = BASE_DIR / 'assets'
 MEDIA_ROOT = BASE_DIR / 'media'
