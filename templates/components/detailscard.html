@@ -5,7 +5,7 @@
     <img
       class="card-img-top rounded h-100 mx-auto d-block"
       src="{{ estate.images.url }}"
-      alt="{{ estate.title }}"
+      alt="{{ estate.description }}"
     />
     {% else %}
     <img
@@ -16,15 +16,14 @@
     {% endif %}
   </article>
   <div class="card-bodyl">
+    {% comment %}
     <h4 class="card-title text-danger">block of flats for sale</h4>
-    <p class="card-text">
-      2-bedroom apartment - ologolo, lekki - ₦150m for sale: spacious 2-bedroom
-      apartment located in a secure and serene neighborhood in ologolo, lekki.
-      location: ologolo, lekki, lagos ....
-    </p>
+    {% endcomment %}
+    <p class="card-text text-danger">{{estate.description}}</p>
     <hr />
-    <p class="text-danger h3">{{estate.price}}</p>
+    <p class="text-danger h3">{{estate.fees}}</p>
   </div>
+  {% comment %}
   <div class="card-footer row">
     <article
       class="col-3 d-flex flex-column justify-content-center align-items-center"
@@ -53,4 +52,5 @@
       <small style="font-size: 12px">2 bedrooms</small>
     </article>
   </div>
+  {% endcomment %}
 </div>

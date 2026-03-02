@@ -5,13 +5,14 @@
 {% block content %}
 <!--card-->
 <div class="container">
-  {% include "components/detailscard.html" %}
+  {% include "components/detailscard.html" %} {% comment %}
   <article class="d-grid gap-2 mb-3">
     <button type="button" class="btn-block">
       <i class="bi bi-heart"></i> Save
     </button>
     <button class="btn-block"><i class="bi bi-heart-fill"></i> Save</button>
   </article>
+  {% endcomment %}
   <!--tabs-->
   {% include "tabs.html" %}
   <!---->
