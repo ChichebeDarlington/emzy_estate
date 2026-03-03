@@ -7,8 +7,8 @@
         <div class="card-body">
           <form action="{% url 'user_estates:login' %}" method="post">
             {% csrf_token %}
-             <!---->
-            <label for="" class="mb-2">{{form.email.label}}</label>
+            <!---->
+            <label for="" class="mb-2">{{form.username.label}}</label>
             <div class="input-group mb-4">
               {{form.username}}
               <span class="input-group-text" id="basic-addon1"

@@ -1,12 +1,18 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
 from . import forms
 from post_estates.models import EstatePost 
 
 # Create your views here.
+login_required
 def delete_estate(request, pk):
     estate = get_object_or_404(EstatePost, id=pk)
+ # Allow only owner to delete
+    if estate.author != request.user:
+        messages.error(request, "You are not allowed to delete this estate.")
+        return redirect("post_estates:home")
 
     if request.method == "POST":
         estate = estate.delete()
