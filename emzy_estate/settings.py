@@ -94,8 +94,10 @@ WSGI_APPLICATION = 'emzy_estate.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 if ENVIRONMENT == "production":
-        DATABASES = {
-        'default': dj_database_url.parse(config("DATABASE_URL"))
+         DATABASES = {
+        'default': dj_database_url.parse(config("DATABASE_URL"), conn_max_age=600,
+        ssl_require=True,) 
+       
     }
 else:
           DATABASES = {
