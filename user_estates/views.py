@@ -6,13 +6,7 @@ from django.contrib.auth import login, logout
 
 
 # Create your views here.
-from django.contrib.auth.models import User
 
-User.objects.create_superuser(
-    username="admin",
-    email="admin@gmail.com",
-    password="admin123"
-)
 
 def register_view(request):
     if request.method == "POST":
