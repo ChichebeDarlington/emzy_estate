@@ -19,9 +19,12 @@
     {% comment %}
     <h4 class="card-title text-danger">block of flats for sale</h4>
     {% endcomment %}
-    <p class="card-text text-danger">{{estate.description}}</p>
+    <p class="card-text text-danger text-capitalize">{{estate.description}}</p>
     <hr />
-    <p class="text-danger h3">{{estate.fees}}</p>
+    <div class="d-flex justify-content-between">
+      <p class="text-danger h3">Fees: N{{estate.fees}}</p>
+      <p class="text-danger h3">TOTAL_PACKAGE: N{{estate.total_package}}</p>
+    </div>
   </div>
   {% comment %}
   <div class="card-footer row">

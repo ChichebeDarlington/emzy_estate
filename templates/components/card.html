@@ -2,7 +2,7 @@
   <a
     href='{% url "post_estates:details" id=estate.id %}'
     class="text-capitalize my-2 text-decoration-none text-dark fs-4"
-    >spacious 2 bedroom flat apartment</a
+    >Apartment: {{estate.apartment}}</a
   >
 
   <section class="row">
@@ -26,17 +26,19 @@
     </article>
     <div class="card-bodyl col-md-8 col-lg-6">
       <h4 class="card-title text-danger text-capitalize fs-6 fw-bolder">
-        block of flats for sale
+        Location: {{estate.location}}
       </h4>
       <p class="card-text fs-6 text-muted">
-        2-bedroom apartment - ologolo, lekki - ₦150m for sale: spacious
-        2-bedroom apartment located in a secure and serene neighborhood in
-        ologolo, lekki. location: ologolo, lekki, lagos ....
+        Description: {{estate.description}}
       </p>
       <hr />
-      <p class="text-danger h3 fs-4 fw-bold">₦{{estate.price}}</p>
+      <p class="text-dark mb-3 h3 fs-6 fw-bold">FEES: ₦{{estate.fees}}</p>
+      <p class="text-danger h3 fs-6 fw-bold">
+        TOTAL_PACKAGE: ₦{{estate.total_package}}
+      </p>
     </div>
   </section>
+  {% comment %}
   <div class="card-footer row">
     <article class="col-3">
       <i class="bi bi-envelope"></i>
@@ -56,4 +58,5 @@
       <p style="font-size: 12px">2 bedrooms</p>
     </article>
   </div>
+  {% endcomment %}
 </div>
