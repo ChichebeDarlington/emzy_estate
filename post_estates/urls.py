@@ -7,7 +7,7 @@ app_name = "post_estates" #tells the project the particular app this name urls b
 urlpatterns = [
     path("", views.fetch_post_view, name="home"),
     path("new_estate", views.create_post_view, name="new_estate"),
-     path("<int:id>", views.estate_detail, name="details"),
-     path("estate/<int:pk>/tab/<str:tab>/", views.estate_tab),
-
+    path("<int:id>", views.estate_detail, name="details"),
+    path("estate/<int:pk>/tab/<str:tab>/", views.estate_tab),
+    path("delete/<int:pk>/", views.delete_estate, name="delete_estate")
 ]

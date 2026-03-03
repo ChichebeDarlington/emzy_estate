@@ -1,16 +1,26 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.db.models import Q
 from . import forms
 from post_estates.models import EstatePost 
 
 # Create your views here.
+def delete_estate(request, pk):
+    estate = get_object_or_404(EstatePost, id=pk)
+
+    if request.method == "POST":
+        estate = estate.delete()
+        messages.success(request, "Estate deleted successfully.")
+        return redirect("post_estates:home")  # change to your listing page name
+    return render(request, "confirm_delete.html", {"estate":estate})
+
 def create_post_view(request):
     if request.method == "POST":
         form = forms.EstatePost(request.POST, request.FILES)
         if form.is_valid:
             new_estate = form.save(commit=False)
             new_estate.author = request.user
-            new_estate.save()
+            new_estate.save()  
             return redirect('post_estates:home')
     else:
         form = forms.EstatePost()

@@ -1,0 +1,5 @@
+<form method="POST" action="{% url 'post_estates:delete_estate' estate.id %}">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Delete</button>
+  <a href="{% url 'post_estates:home' %}" class="btn btn-secondary"> Cancel </a>
+</form>
